@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Window
+    x:Class="FlintTool.MainWindow"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:FlintTool"
+    xmlns:controls="using:FlintTool.Views"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d">
+    <Window.SystemBackdrop>
+        <DesktopAcrylicBackdrop />
+    </Window.SystemBackdrop>
+    <Grid HorizontalAlignment="Stretch" VerticalAlignment="Stretch">
+        <Border x:Name="appTitleBar" HorizontalAlignment="Stretch" VerticalAlignment="Top" Height="40"></Border>
+        <TabView VerticalAlignment="Stretch">
+            <TabView.TabStripHeader>
+                <StackPanel Orientation="Horizontal">
+                    <Image Width="20" Height="20" Source="ms-appx:///Assets/icon.png" Margin="8 0 0 0"/>
+                    <TextBlock Text="Flint Tool" VerticalAlignment="Center" Margin="8 6 15 6" Style="{ThemeResource BaseTextBlockStyle}"/>
+                </StackPanel>
+            </TabView.TabStripHeader>
+            <TabView.TabItems>
+                <TabViewItem Header="Home">
+                    <TabViewItem.IconSource>
+                        <SymbolIconSource Symbol="Placeholder" />
+                    </TabViewItem.IconSource>
+                    <controls:FileViewer x:Name="fileViewer"/>
+                </TabViewItem>
+            </TabView.TabItems>
+        </TabView>
+    </Grid>
+</Window>
